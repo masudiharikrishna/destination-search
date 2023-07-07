@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import './index.css'
 
-import {DestinationItem} from '../DestinationItem'
+import DestinationItem from '../DestinationItem'
 
 class DestinationSearch extends Component {
   state = {searchinput: ''}
@@ -12,6 +12,14 @@ class DestinationSearch extends Component {
 
   render() {
     const {searchinput} = this.state
+    const {destinationList} = this.props
+
+    const filteredDestinations = destinationList.filter(destination =>
+      destination.toLowerCase().includes(searchinput.toLowerCase()),
+    )
+    const renderedDestinations = filteredDestinations.map(destination => (
+      <DestinationItem destination={destination} />
+    ))
 
     return (
       <div className="bg-container">
@@ -30,7 +38,9 @@ class DestinationSearch extends Component {
             className="image"
           />
         </div>
-        <DestinationItem />
+        <div>
+          <ul>{renderedDestinations}</ul>
+        </div>
       </div>
     )
   }
