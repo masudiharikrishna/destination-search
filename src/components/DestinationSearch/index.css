@@ -1,0 +1,33 @@
+/* Write your CSS here */
+.bg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: roboto;
+}
+.search-container {
+  display: flex;
+  flex-direction: row;
+}
+.heading {
+  font-size: 40px;
+}
+.input {
+  height: 35px;
+  width: 300px;
+  border-width: 0px;
+  background-color: #f1f5f9;
+  color: black;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 10px;
+}
+.image {
+  height: 35px;
+  width: 35px;
+  background-color: #f1f5f9;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 5px;
+}
